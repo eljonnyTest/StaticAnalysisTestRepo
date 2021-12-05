@@ -2,14 +2,10 @@ name: Static analysis
 
 on:
   push:
-    branch:
+    branches:
       - develop
       - master
       - main
-
-  pull_request_target:
-    branch:
-      - "*"
 
 jobs:
   static_analysis:
@@ -19,8 +15,10 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run static analysis
-      uses: JacobDomagala/StaticAnalysis@make-it-work-on-fork
+      uses: JacobDomagala/StaticAnalysis@37-rewrite-get-files-to-check-script
       with:
         verbose: true
         exclude_dir: lib
         cmake_args: -DCMAKE_BUILD_TYPE=Debug
+        cppcheck_args: --enable=all --suppress=missingInclude
+        clang_tidy_args: -checks='*,fuchsia-*,google-*,zircon-*,abseil-*,modernize-use-trailing-return-type,llvm*,hicpp-uppercase-literal-suffix,readability-uppercase-literal-suffix'
