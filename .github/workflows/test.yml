@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run static analysis
-      uses: JacobDomagala/StaticAnalysis@37-rewrite-get-files-to-check-script
+      uses: JacobDomagala/StaticAnalysis@46-aggregate-notes-into-single-warningerror
       with:
         verbose: true
         exclude_dir: lib
