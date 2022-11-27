@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run static analysis
-      uses: JacobDomagala/StaticAnalysis@54-update-docker-image
+      uses: JacobDomagala/StaticAnalysis@56-fix-clang-tidy-command
       with:
         verbose: true
         exclude_dir: lib
