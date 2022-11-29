@@ -32,7 +32,7 @@ jobs:
           echo BRANCH_NAME=${BRANCH_NAME}
           
     - name: Run static analysis
-      uses: JacobDomagala/StaticAnalysis@62-fix-branch-name-when-testaction-workflow-is-run-by-push
+      uses: JacobDomagala/StaticAnalysis@master
       with:
         verbose: true
         exclude_dir: lib
