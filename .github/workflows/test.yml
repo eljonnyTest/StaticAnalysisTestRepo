@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run static analysis
-      uses: JacobDomagala/StaticAnalysis@${GITHUB_HEAD_REF}
+      uses: JacobDomagala/StaticAnalysis@62-fix-branch-name-when-testaction-workflow-is-run-by-push
       with:
         verbose: true
         exclude_dir: lib
