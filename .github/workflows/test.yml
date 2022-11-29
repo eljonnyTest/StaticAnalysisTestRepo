@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run static analysis
-      uses: JacobDomagala/StaticAnalysis@58-add-build-badges-to-readme
+      uses: JacobDomagala/StaticAnalysis@
       with:
         verbose: true
         exclude_dir: lib
