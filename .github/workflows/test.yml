@@ -17,7 +17,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
+    - name: Test the action
+      shell: bash
+      run: |
+          if [ ${GITHUB_EVENT_NAME} = 'push' ]
+          then
+            echo GITHUB_EVENT_NAME=${GITHUB_EVENT_NAME} using ${GITHUB_REF}
+            BRANCH_NAME=${GITHUB_REF}
+          else
+            echo GITHUB_EVENT_NAME=${GITHUB_EVENT_NAME} using ${GITHUB_HEAD_REF}
+            BRANCH_NAME=${GITHUB_HEAD_REF}
+          fi
+          
+          echo BRANCH_NAME=${BRANCH_NAME}
+          
     - name: Run static analysis
       uses: JacobDomagala/StaticAnalysis@62-fix-branch-name-when-testaction-workflow-is-run-by-push
       with:
