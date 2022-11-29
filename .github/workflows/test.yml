@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run static analysis
-      uses: JacobDomagala/StaticAnalysis@56-fix-clang-tidy-command
+      uses: JacobDomagala/StaticAnalysis@59-allow-workflows-to-run-on-push
       with:
         verbose: true
         exclude_dir: lib
