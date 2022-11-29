@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run static analysis
-      uses: JacobDomagala/StaticAnalysis@
+      uses: JacobDomagala/StaticAnalysis@${GITHUB_HEAD_REF}
       with:
         verbose: true
         exclude_dir: lib
