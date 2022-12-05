@@ -32,7 +32,7 @@ jobs:
           echo BRANCH_NAME=${BRANCH_NAME}
           
     - name: Run static analysis
-      uses: JacobDomagala/StaticAnalysis@64-figure-out-a-way-to-verifyoutput-testaction-workflow
+      uses: JacobDomagala/StaticAnalysis@master
       with:
         verbose: true
         exclude_dir: lib
