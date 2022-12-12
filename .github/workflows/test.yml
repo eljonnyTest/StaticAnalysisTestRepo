@@ -32,7 +32,7 @@ jobs:
           echo BRANCH_NAME=${BRANCH_NAME}
           
     - name: Run static analysis
-      uses: JacobDomagala/StaticAnalysis@50-write-additional-unit-tests
+      uses: JacobDomagala/StaticAnalysis@master
       with:
         verbose: true
         exclude_dir: lib
