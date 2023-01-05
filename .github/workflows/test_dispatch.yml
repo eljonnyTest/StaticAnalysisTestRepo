@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Comment on a PR
     steps:
+    - uses: actions/checkout@v2
+    - name: Test the action
       shell: bash
       run: |
           if [ ${GITHUB_EVENT_NAME} = 'push' ]
@@ -22,4 +24,5 @@ jobs:
             BRANCH_NAME=${GITHUB_HEAD_REF}
           fi
 
+          echo  ${{ github.event.client_payload.comment_content }}
           echo BRANCH_NAME=${BRANCH_NAME}
