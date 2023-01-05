@@ -1,0 +1,25 @@
+name: Test
+
+on:
+  repository_dispatch:
+    types: comment-pr
+
+concurrency: ${{ github.event.repository.name }}-${{ github.ref }}
+
+jobs:
+  comment-on-pr:
+    runs-on: ubuntu-latest
+    name: Comment on a PR
+    steps:
+      shell: bash
+      run: |
+          if [ ${GITHUB_EVENT_NAME} = 'push' ]
+          then
+            echo GITHUB_EVENT_NAME=${GITHUB_EVENT_NAME} using ${GITHUB_REF_NAME}
+            BRANCH_NAME=${GITHUB_REF_NAME}
+          else
+            echo GITHUB_EVENT_NAME=${GITHUB_EVENT_NAME} using ${GITHUB_HEAD_REF}
+            BRANCH_NAME=${GITHUB_HEAD_REF}
+          fi
+
+          echo BRANCH_NAME=${BRANCH_NAME}

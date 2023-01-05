@@ -28,9 +28,9 @@ jobs:
             echo GITHUB_EVENT_NAME=${GITHUB_EVENT_NAME} using ${GITHUB_HEAD_REF}
             BRANCH_NAME=${GITHUB_HEAD_REF}
           fi
-          
+
           echo BRANCH_NAME=${BRANCH_NAME}
-          
+
     - name: Run static analysis
       uses: JacobDomagala/StaticAnalysis@master
       with:
