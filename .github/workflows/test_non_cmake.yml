@@ -1,5 +1,16 @@
 name: Test (non CMake)
 
+on:
+  push:
+    branches:
+      - develop
+      - master
+      - main
+
+  pull_request_target:
+    branches:
+      - "*"
+
 jobs:
   static_analysis:
     runs-on: ubuntu-latest
