@@ -50,7 +50,19 @@ jobs:
       if: ${{ always() }}
       uses: JacobDomagala/StaticAnalysis@70-support-for-makefile-based-projects
       with:
+        comment_title: "SA CMake output"
         verbose: true
+        exclude_dir: lib
+        cmake_args: -DCMAKE_BUILD_TYPE=Debug
+        cppcheck_args: --enable=all --suppress=missingInclude
+        clang_tidy_args: -checks='*,fuchsia-*,google-*,zircon-*,abseil-*,modernize-use-trailing-return-type,llvm*,hicpp-uppercase-literal-suffix,readability-uppercase-literal-suffix'
+
+    - name: Run static analysis
+      uses: JacobDomagala/StaticAnalysis@70-support-for-makefile-based-projects
+      with:
+        comment_title: "SA non-CMake output"
+        verbose: true
+        use_cmake: false
         exclude_dir: lib
         cmake_args: -DCMAKE_BUILD_TYPE=Debug
         cppcheck_args: --enable=all --suppress=missingInclude
