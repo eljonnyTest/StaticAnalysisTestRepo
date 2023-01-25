@@ -46,7 +46,7 @@ jobs:
         comment_title: UBUNTU COMPILE RESULT
         compile_result_file: ${{runner.workspace}}/build/output.txt
 
-    - name: Run static analysis
+    - name: Run static analysis (CMake)
       if: ${{ always() }}
       uses: JacobDomagala/StaticAnalysis@70-support-for-makefile-based-projects
       with:
@@ -57,7 +57,8 @@ jobs:
         cppcheck_args: --enable=all --suppress=missingInclude
         clang_tidy_args: -checks='*,fuchsia-*,google-*,zircon-*,abseil-*,modernize-use-trailing-return-type,llvm*,hicpp-uppercase-literal-suffix,readability-uppercase-literal-suffix'
 
-    - name: Run static analysis
+    - name: Run static analysis (non CMake)
+      if: ${{ always() }}
       uses: JacobDomagala/StaticAnalysis@70-support-for-makefile-based-projects
       with:
         comment_title: "SA non-CMake output"
