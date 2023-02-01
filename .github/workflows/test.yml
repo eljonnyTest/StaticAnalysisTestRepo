@@ -48,7 +48,7 @@ jobs:
 
     - name: Run static analysis (CMake)
       if: ${{ always() }}
-      uses: JacobDomagala/StaticAnalysis@70-support-for-makefile-based-projects
+      uses: JacobDomagala/StaticAnalysis@master
       with:
         comment_title: "SA CMake output"
         verbose: true
@@ -59,7 +59,7 @@ jobs:
 
     - name: Run static analysis (non CMake)
       if: ${{ always() }}
-      uses: JacobDomagala/StaticAnalysis@70-support-for-makefile-based-projects
+      uses: JacobDomagala/StaticAnalysis@master
       with:
         comment_title: "SA non-CMake output"
         verbose: true
