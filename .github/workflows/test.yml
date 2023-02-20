@@ -51,7 +51,7 @@ jobs:
       run: |
         echo "#!/bin/bash
 
-        echo "Hello from the init script!" > init_script.sh
+        echo \"Hello from the init script!\" " > init_script.sh
 
     - name: Run static analysis (CMake)
       if: ${{ always() }}
