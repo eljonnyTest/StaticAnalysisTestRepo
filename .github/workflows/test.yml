@@ -60,6 +60,7 @@ jobs:
         comment_title: "SA CMake output"
         verbose: true
         exclude_dir: lib
+        init_script: init_script.sh
         cmake_args: -DCMAKE_BUILD_TYPE=Debug
         cppcheck_args: --enable=all --suppress=missingInclude
         clang_tidy_args: -checks='*,fuchsia-*,google-*,zircon-*,abseil-*,modernize-use-trailing-return-type,llvm*,hicpp-uppercase-literal-suffix,readability-uppercase-literal-suffix'
@@ -72,6 +73,7 @@ jobs:
         verbose: true
         use_cmake: false
         exclude_dir: lib
+        init_script: init_script.sh
         cmake_args: -DCMAKE_BUILD_TYPE=Debug
         cppcheck_args: --enable=all --suppress=missingInclude
         clang_tidy_args: -checks='*,fuchsia-*,google-*,zircon-*,abseil-*,modernize-use-trailing-return-type,llvm*,hicpp-uppercase-literal-suffix,readability-uppercase-literal-suffix'
