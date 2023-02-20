@@ -46,6 +46,13 @@ jobs:
         comment_title: UBUNTU COMPILE RESULT
         compile_result_file: ${{runner.workspace}}/build/output.txt
 
+    - name: setup init_script
+      shell: bash
+      run: |
+        echo "#!/bin/bash
+
+        echo "Hello from the init script!" > init_script.sh
+
     - name: Run static analysis (CMake)
       if: ${{ always() }}
       uses: JacobDomagala/StaticAnalysis@78-provide-root_dir-and-build_dir-as-init_script-arguments
