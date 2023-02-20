@@ -50,11 +50,9 @@ jobs:
       shell: bash
       run: |
         echo "#!/bin/bash
-
-        root_dir=${1}
-        build_dir=${2}
-
-        echo \"Hello from the init script! First arg=${root_dir} second arg=${build_dir}\" " > init_script.sh
+        root_dir=\${1}
+        build_dir=\${2}
+        echo \"Hello from the init script! First arg=\${root_dir} second arg=\${build_dir}\" " > init_script.sh
 
     - name: Run static analysis (CMake)
       if: ${{ always() }}
