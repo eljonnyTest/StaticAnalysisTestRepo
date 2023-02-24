@@ -56,7 +56,7 @@ jobs:
 
     - name: Run static analysis (CMake)
       if: ${{ always() }}
-      uses: JacobDomagala/StaticAnalysis@80-fix-cppcheck-command
+      uses: JacobDomagala/StaticAnalysis@master
       with:
         comment_title: "SA CMake output"
         verbose: true
@@ -68,7 +68,7 @@ jobs:
 
     - name: Run static analysis (non CMake)
       if: ${{ always() }}
-      uses: JacobDomagala/StaticAnalysis@80-fix-cppcheck-command
+      uses: JacobDomagala/StaticAnalysis@master
       with:
         comment_title: "SA non-CMake output"
         verbose: true
