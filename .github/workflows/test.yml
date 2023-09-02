@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run static analysis
-      uses: JacobDomagala/StaticAnalysis@master
+      uses: JacobDomagala/StaticAnalysis@94-update-report_pr_changes_only-to-collect-the-list-of-changed-files
       with:
         comment_title: "SA output"
         verbose: true
