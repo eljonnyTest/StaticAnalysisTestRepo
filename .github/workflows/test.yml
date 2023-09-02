@@ -56,7 +56,7 @@ jobs:
 
     - name: Run static analysis (CMake)
       if: ${{ always() }}
-      uses: JacobDomagala/StaticAnalysis@master
+      uses: JacobDomagala/StaticAnalysis@94-update-report_pr_changes_only-to-collect-the-list-of-changed-files
       with:
         comment_title: "SA CMake output"
         verbose: true
@@ -68,7 +68,7 @@ jobs:
 
     - name: Run static analysis (non CMake)
       if: ${{ always() }}
-      uses: JacobDomagala/StaticAnalysis@master
+      uses: JacobDomagala/StaticAnalysis@94-update-report_pr_changes_only-to-collect-the-list-of-changed-files
       with:
         comment_title: "SA non-CMake output"
         verbose: true
