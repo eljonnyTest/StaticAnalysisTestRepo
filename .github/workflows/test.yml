@@ -8,9 +8,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build
-      working-directory: ${{runner.workspace}}/build/some/right
       shell: bash
       run: |
+        mkdir -p ${{runner.workspace}}/build/some/right
+        cd ${{runner.workspace}}/build/some/right
         cmake $GITHUB_WORKSPACE
         cmake --build . 2> >(tee "output.txt")
     - name: Post PR comment for warnings/errors
