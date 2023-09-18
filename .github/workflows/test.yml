@@ -63,7 +63,7 @@ jobs:
         exclude_dir: lib
         init_script: init_script.sh
         cmake_args: -DCMAKE_BUILD_TYPE=Debug
-        cppcheck_args: --enable=all --suppress=missingInclude
+        cppcheck_args: --enable=all
         clang_tidy_args: -checks='*,fuchsia-*,google-*,zircon-*,abseil-*,modernize-use-trailing-return-type,llvm*,hicpp-uppercase-literal-suffix,readability-uppercase-literal-suffix'
 
     - name: Run static analysis (non CMake)
@@ -76,5 +76,5 @@ jobs:
         exclude_dir: lib
         init_script: init_script.sh
         cmake_args: -DCMAKE_BUILD_TYPE=Debug
-        cppcheck_args: --enable=all --suppress=missingInclude
+        cppcheck_args: --enable=all
         clang_tidy_args: -checks='*,fuchsia-*,google-*,zircon-*,abseil-*,modernize-use-trailing-return-type,llvm*,hicpp-uppercase-literal-suffix,readability-uppercase-literal-suffix'
