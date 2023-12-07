@@ -1,0 +1,27 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+      - main
+
+  pull_request_target:
+    branches:
+      - "*"
+
+jobs:
+  static_analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Run static analysis Python
+      uses: JacobDomagala/StaticAnalysis@master
+      with:
+        comment_title: "Python"
+        verbose: true
+        language: Python
+        python_dirs: .
