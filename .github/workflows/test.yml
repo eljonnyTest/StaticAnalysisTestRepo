@@ -56,7 +56,7 @@ jobs:
 
     - name: Run static analysis (CMake)
       if: ${{ always() }}
-      uses: JacobDomagala/StaticAnalysis@133-see-if-we-can-use-user-generated-compile_commandsjson-file
+      uses: JacobDomagala/StaticAnalysis@master
       with:
         comment_title: "SA CMake output"
         verbose: true
